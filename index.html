@@ -24,30 +24,33 @@
         <input type="checkbox" id="read"><br />
         <button type="submit" class="submitbtn">Submit</button>
     </form>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDXrzWbGPA5nn712P8dWB9JiMaraFjOPHg",
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+      
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+      
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+        <script>
+            // TODO: Replace the following with your app's Firebase project configuration
+            // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+            var firebaseConfig = {
+                apiKey: "AIzaSyDXrzWbGPA5nn712P8dWB9JiMaraFjOPHg",
     authDomain: "janelibrary-8cc2b.firebaseapp.com",
     databaseURL: "https://janelibrary-8cc2b.firebaseio.com",
     projectId: "janelibrary-8cc2b",
     storageBucket: "janelibrary-8cc2b.appspot.com",
     messagingSenderId: "298958890966",
     appId: "1:298958890966:web:e0bfdb51489c899e2ba677"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const preObject = document.getElementById('object');
-
-const dbRefObject = firebase.database().ref().child('object');
-dbRefObject.on('value', snap => console.log(snap.val()));
-</script>
+            };
+        
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+          </script>
 </body>
 
 <script defer src="script.js"></script>
