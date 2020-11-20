@@ -4,11 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <pre id="object">
 
-    </div>    
+    </pre>
+    <div class="container">
+    </div>
+    <button class="addbook addbtn">Add a new book</button>
+    <form>
+        <label for="title">Book Title: </label>
+        <input type="text" id="title"><br />
+        <label for="author">Book Author: </label>
+        <input type="text" id="author"><br />
+        <label for="pages">Number of Pages: </label>
+        <input type="number" min="1" id="pages"><br />
+        <label for="read">Have you read this book? </label>
+        <input type="checkbox" id="read"><br />
+        <button type="submit" class="submitbtn">Submit</button>
+    </form>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDXrzWbGPA5nn712P8dWB9JiMaraFjOPHg",
+    authDomain: "janelibrary-8cc2b.firebaseapp.com",
+    databaseURL: "https://janelibrary-8cc2b.firebaseio.com",
+    projectId: "janelibrary-8cc2b",
+    storageBucket: "janelibrary-8cc2b.appspot.com",
+    messagingSenderId: "298958890966",
+    appId: "1:298958890966:web:e0bfdb51489c899e2ba677"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const preObject = document.getElementById('object');
+
+const dbRefObject = firebase.database().ref().child('object');
+dbRefObject.on('value', snap => console.log(snap.val()));
+</script>
 </body>
-<script src="script.js"></script>
+
+<script defer src="script.js"></script>
 </html>
